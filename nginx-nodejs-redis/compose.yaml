@@ -9,17 +9,17 @@ services:
     build: ./web
     hostname: web1
     ports:
-      - '81:5000'
+      - '8081:5000'
   web2:
     restart: on-failure
     build: ./web
     hostname: web2
     ports:
-      - '82:5000'
+      - '8082:5000'
   nginx:
     build: ./nginx
     ports:
-    - '80:80'
+    - '8080:8080'
     depends_on:
     - web1
     - web2
